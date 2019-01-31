@@ -2,41 +2,27 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
-      concat: {
-        js: {
-          src: ['src/js/jquery.js', 'src/js/navbar.js'],
-            dest: 'dist/main.js',
-          },
-        css:{
-          src: ['src/css/footer.css', 'src/css/navbar.css'],
-          dest: 'dist/style.css',
-        },
-      },
       watch: {
         js: {
           files: ['src/js/**/*.js'],
-          tasks: ['concat:js'],
+          tasks: ['uglify'],
         },
         css: {
-          files: ['src/css/**/*.css'],
-          tasks: ['concat:css'],
+          files: ['src/css/**/*.css']
         }
       },
       uglify: {
-        js: {
-          files: ['src/js/**/*.js'],
-          tasks: ['concat:js'],
-        },
-        css: {
-          files: ['src/css/**/*.css'],
-          tasks: ['concat:css'],
-        }
+        build: {
+          files: [{
+            src: 'src/js/**/*.js',
+            dest: 'dist/js/main.min.js'  
+          }]
+        }  
       }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default', ['concat','watch', 'uglify']);
+    grunt.registerTask('default', ['watch', 'uglify']);
 
 }
