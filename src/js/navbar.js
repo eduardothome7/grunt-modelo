@@ -1,3 +1,3 @@
-console.log("Navbar");
+console.log("Navbar2");
 
 // Teste concat
