@@ -1,2 +1,10 @@
+@import 'variables';
+@import 'overrides';
 @import 'footer';
 @import 'navbar';
+
+section#main {
+    padding: 1pc;
+    padding-top: 12pc;
+    text-align: center;
+}

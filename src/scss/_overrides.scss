@@ -1,0 +1,17 @@
+html,
+body,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+a {
+    cursor: pointer;
+    &.hover, &:focus {
+        text-decoration: none;
+    }
+
+    &.primary {
+        background: $primary;
+    }
+}

@@ -1,4 +1,30 @@
-.nav {
-    background: red;
+nav {
     padding: 0.7pc;
+    background: #000;
+    float: left;
+    width: 100%;
+
+    ul {
+        width: 100%;
+        list-style: none;
+        margin-top: 1pc;
+        margin-bottom: 1pc;
+
+        li {
+            display: inline-block;            
+            
+            a {
+                padding: 0.4pc 1.08pc;
+                color: white;
+            }
+        }   
+
+        &.right {
+            float: right;
+
+            li {
+                float: right;
+            }
+        }
+    }    
 }
